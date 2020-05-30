@@ -1,0 +1,30 @@
+.repo-header h1 {
+    font-size: 1.2em;
+}
+
+.repo-header p {
+    font-size: 1em;
+}
+
+
+.repo-info {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.repo-info-item {
+   display: flex;
+   align-items: stretch;
+   margin-right: 1em;
+}
+
+.repo-info-item i {
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, .8);
+}
+
+.repo-info-item span {
+    margin-left: 5px;
+    font-size: .9em;
+}
