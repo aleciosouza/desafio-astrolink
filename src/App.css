@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Poppins", "Verdana", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* width: 100%; */
+  width: 100%;
 }
 
 .flex-row {
@@ -22,9 +23,9 @@ body {
 
 .navbar-search {
   padding: 1em 0;
-  /* background-color: #f44336!important; */
   display: flex;
   width: 100%;
+  background-color: #ddd;
 }
 
 .mat-icon {

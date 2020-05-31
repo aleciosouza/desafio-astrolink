@@ -3012,8 +3012,8 @@ class GitHubService {
     async getUser(username) {
         return new Promise(async (resolve, reject) => {
             try {
-                // const { data } = await this.repository.getUser(username);
-                const data = USER_REQUEST;
+                const { data } = await this.repository.getUser(username);
+                // const data = USER_REQUEST;
                 const repos = await this.getReposByUser(username);
                 resolve({
                     id: data.id,
@@ -3034,8 +3034,8 @@ class GitHubService {
     async getReposByUser(username) {
         return new Promise(async (resolve, reject) => {
             try {
-                // const { data } = await this.repository.getReposByUser(username);
-                const data = REPOS_REQUEST;
+                const { data } = await this.repository.getReposByUser(username);
+                // const data = REPOS_REQUEST;
                 const repos = data.map(repo => {
                     return {
                         id: repo.id,

@@ -1,6 +1,6 @@
 .form-container {
-    padding: 0 1em;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
+    max-width: 100%;
 }
 
 .form-input{
@@ -26,9 +26,10 @@
     display: flex;
     align-content: stretch;
     justify-content: space-between;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #616161;
     transition: border .25s ease-out;
     font-size: 1.2em;
+    margin: 0 1em;
 }
 
 .input-group:focus-within {

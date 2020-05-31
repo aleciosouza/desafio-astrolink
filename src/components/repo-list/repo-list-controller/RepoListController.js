@@ -19,32 +19,28 @@ class RepoListController extends React.Component {
     }
 
     changeOrdenation = () => {
-        const { filter, repos } = this.state;
+        // const { filter, repos } = this.state;
 
-        const newFilter = (filter.order === 'asc') ?
+        const newFilter = (this.state.filter.order === 'asc') ?
             { order: 'desc', icon: 'arrow_downward', text: 'Menos estrelas' } :
             { order: 'asc', icon: 'arrow_upward', text: 'Mais estrelas' };
 
         const newRepos = (newFilter.order === 'asc') ?
-            ([...repos].sort((a, b) => (a.stargazers_count < b.stargazers_count) ? 1 : -1)) :
-            ([...repos].sort((a, b) => (a.stargazers_count > b.stargazers_count) ? 1 : -1));
+            ([...this.state.repos].sort((a, b) => (a.stargazers_count < b.stargazers_count) ? 1 : -1)) :
+            ([...this.state.repos].sort((a, b) => (a.stargazers_count > b.stargazers_count) ? 1 : -1));
 
-        this.setState({
-            filter: newFilter,
-            repos: newRepos
-        });
+        this.setState({ filter: newFilter, repos: newRepos });
     }
 
     render() {
-        const { repos, filter } = this.state;
-
+        // const { repos, filter } = this.state;
         return (
             <div className="container repo-list">
                 <div className="repo-list-header">
                     <h1>Repositórios</h1>
-                    <FloatingButton icon={filter.icon} text={filter.text} onClick={this.changeOrdenation} />
+                    <FloatingButton icon={this.state.filter.icon} text={this.state.filter.text} onClick={this.changeOrdenation} />
                 </div>
-                <RepoList repos={repos} />
+                <RepoList repos={this.state.repos} />
             </div>
         )
     }

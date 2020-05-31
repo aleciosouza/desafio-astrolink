@@ -1,5 +1,25 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.header-img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #f44336;
+    background-color: white;
+}
+
+.profile-header,
+.profile-status {
+    margin: 1em 0;
+    width: 90%;
+}
+
 .profile-user {
-    border-bottom: 1px solid #ddd;
+    text-align: center;
     padding-bottom: .5em;
 }
 
@@ -14,23 +34,48 @@
 }
 
 .profile-bio {
-    margin: 1em 0;
-    text-align: justify;
+    text-align: center;
 }
 
 .profile-bio b {
-    font-size: 1e;
+    font-size: 1em;
 }
 
 .profile-status {
-    list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .profile-status li {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .profile-container {
+        width: 50%;
+    }
+
+    .header-img {
+        max-width: 70%;
+    }
+}
+
+
+@media screen and (min-device-width: 992px) and (max-device-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) {
+    .profile-container {
+        width: 40%;
+    }
+}
+
+@media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+    .profile-container {
+        width: 25%;
+        margin-top: 1em;
+    }
+
+    .header-img {
+        max-width: 60%;
+    }
 }

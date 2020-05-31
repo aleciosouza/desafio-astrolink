@@ -25,12 +25,7 @@ class App extends React.Component {
   }
 
   render() {
-
-    // const cardUser = this.state.user ?
-    //   (<CardUser user={this.state.user} />) :
-    //   (<p>Nenhum usuário</p>)
-
-      const repoListController = this.state.user && <RepoListController repos={this.state.user.repos} order="asc" />
+    const { user } = this.state;
 
     return (
       <div className="container">
@@ -38,10 +33,10 @@ class App extends React.Component {
           <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <UserSearchForm onUserChanged={this.onUserChanged} />
-          {this.state.user && <CardUser user={this.state.user} />}
+          {user && <CardUser user={user} />}
         </header>
-        <main className="container">
-          {repoListController}
+        <main className="container elevation-z8">
+          {user && <RepoListController repos={user.repos} />}
         </main>
       </div>
     )
