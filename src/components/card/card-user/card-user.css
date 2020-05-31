@@ -1,0 +1,36 @@
+.profile-user {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: .5em;
+}
+
+.profile-user h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #f44336;
+}
+
+.profile-user p {
+    font-size: .8em;
+}
+
+.profile-bio {
+    margin: 1em 0;
+    text-align: justify;
+}
+
+.profile-bio b {
+    font-size: 1e;
+}
+
+.profile-status {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.profile-status li {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+}

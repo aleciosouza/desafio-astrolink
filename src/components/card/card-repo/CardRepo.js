@@ -6,18 +6,23 @@ class CardRepo extends React.Component {
 
     render() {
         const {
-            id,
             name,
             description,
             stargazers_count,
             language,
+            svn_url,
         } = this.props.repo;
 
 
         return (
             <div className="card card-repo elevation-z4">
                 <div className="card-header repo-header">
-                    <h1>{name}</h1>
+                    <h1>
+                        <a href={svn_url} target="_blank"> 
+                            {name}
+                            <i className="mat-icon">open_in_new</i>
+                        </a>
+                    </h1>
                     <p>{description}</p>
                 </div>
                 <div className="card-body">

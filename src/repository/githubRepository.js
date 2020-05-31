@@ -1,4 +1,4 @@
-import Repository from './repository'
+import Repository from './Repository'
 
 class GitHubRepository extends Repository {
 

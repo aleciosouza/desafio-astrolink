@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import UserSearchForm from './components/user-search-form/user-search-form'
-import CardUser from './components/card/card-user/card-user'
-import UserRepoList from './components/user-repo-list/userRepoList'
+import UserSearchForm from './components/user-search-form/UserSearchForm'
+import CardUser from './components/card/card-user/CardUser'
+import RepoListController from './components/repo-list/repo-list-controller/RepoListController'
 
 class App extends React.Component {
 
@@ -16,7 +16,6 @@ class App extends React.Component {
   onUserChanged = (userPromise) => {
     userPromise
       .then(user => {
-        console.log(user);
         this.setState({ user });
       })
       .catch(e => {
@@ -31,7 +30,7 @@ class App extends React.Component {
       (<CardUser user={this.state.user} />) :
       (<p>Nenhum usuário</p>)
 
-      const userRepoList = this.state.user && <UserRepoList repos={this.state.user.repos} />
+      const repoListController = this.state.user && <RepoListController repos={this.state.user.repos} order="asc" />
 
     return (
       <div className="container">
@@ -42,7 +41,7 @@ class App extends React.Component {
         </header>
         <main className="container">
           {cardUser}
-          {userRepoList}
+          {repoListController}
         </main>
       </div>
     )

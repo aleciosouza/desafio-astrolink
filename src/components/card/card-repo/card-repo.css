@@ -1,11 +1,27 @@
 .repo-header h1 {
     font-size: 1.2em;
+    margin-bottom: .5em;
+}
+
+.repo-header a {
+    color: #f44336;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.repo-header i {
+    color: #f44336;
+    font-size: 1em;
+    justify-self: flex-end;
 }
 
 .repo-header p {
     font-size: 1em;
 }
-
 
 .repo-info {
     list-style: none;

@@ -1,6 +1,6 @@
 import React from 'react'
 import './user-search-form.css'
-import GitHubService from '../../service/githubService'
+import GitHubService from '../../service/GithubService'
 
 class UserSearchForm extends React.Component {
 

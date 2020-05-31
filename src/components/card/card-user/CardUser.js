@@ -1,4 +1,5 @@
 import React from 'react';
+import './card-user.css'
 import '../card.css'
 
 class CardUser extends React.Component {
@@ -21,7 +22,7 @@ class CardUser extends React.Component {
                 <div className="card-header">
                     <div className="profile-user">
                         <h1>{login}</h1>
-                        <p>{email}</p>
+                        {email && <p>{email}</p>}
                     </div>
                     <p className="profile-bio">
                         <b>Bio</b><br />
