@@ -3056,6 +3056,26 @@ class GitHubService {
         });
     }
 
+    validateUsername(username) {
+        const reg = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i
+        const valid = reg.test(username);
+        let error =  null;
+
+        if(!valid) {
+            if(!username){
+                error = 'Informe um usuário';
+            } else if(username.length > 39) {
+                error = 'O nome de usuário pode ter no máximo 39 caracteres.';
+            } else if(username[0] === '-') {
+                error = 'O nome de usuário não pode começar com hífem.';
+            } else {
+                error = 'O nome de usuário não pode conter caracteres especiais.';
+            }
+        }
+
+        return error;
+    }
+
 }
 
 export default GitHubService

@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .flex-row {
@@ -21,10 +21,10 @@ body {
 }
 
 .navbar-search {
-  width: 100%;
-  padding: 2em 0;
+  padding: 1em 0;
   /* background-color: #f44336!important; */
   display: flex;
+  width: 100%;
 }
 
 .mat-icon {
@@ -38,4 +38,8 @@ button.mat-icon {
   border: none;
   background-color: transparent;
   padding: .5em;
+}
+
+.error {
+  color: #d50000;
 }

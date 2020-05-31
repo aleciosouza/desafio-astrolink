@@ -1,3 +1,8 @@
+.form-container {
+    padding: 0 1em;
+    margin-bottom: .5em;
+}
+
 .form-input{
     background-color: transparent;
     border: none;
@@ -19,13 +24,17 @@
 
 .input-group {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    align-content: stretch;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
     transition: border .25s ease-out;
     font-size: 1.2em;
 }
 
 .input-group:focus-within {
     border-bottom: 2px solid black;
+}
+
+.form-container > .error {
+    font-weight: bold;
 }

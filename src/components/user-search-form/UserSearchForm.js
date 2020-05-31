@@ -9,36 +9,49 @@ class UserSearchForm extends React.Component {
         this.state = {
             username: '',
             user: null,
+            error: null
         }
     }
-    
+
     componentDidMount() {
         this.service = new GitHubService();
-        this.setState({ username: 'andrew' }, () => {
-            this.props.onUserChanged(this.service.getUser(this.state.username));
-        });
     }
 
     onChangeHandler = (event) => {
-        this.setState({username: event.target.value});
+        const { value } = event.target;
+        this.setState({ username: value });
     }
 
     onSubmitHandler = (event) => {
-        this.props.onUserChanged(this.service.getUser(this.state.username));
+        const { username } = this.state;
+        const error = this.service.validateUsername(username);
+
+        if (!error) {
+            this.props.onUserChanged(this.service.getUser(username));
+        }
+
+        this.setState({ error: error });
+
         event.preventDefault();
     }
 
     render() {
+        const { error } = this.state;
+
         return (
-            <form onSubmit={this.onSubmitHandler}>
-                <div className="input-group">
-                    <input name="userSearch" placeholder="Usuário" className="form-input" 
-                        onChange={this.onChangeHandler}/>
-                    <button type="submit" className="mat-icon" onClick={this.onSubmitHandler}>
-                        search
-                    </button>
-                </div>
-            </form>
+            <div className="form-container">
+                <form onSubmit={this.onSubmitHandler}>
+                    <div className="input-group">
+                        <input name="userSearch" placeholder="Usuário" className="form-input"
+                            minLength="3" maxLength="39"
+                            onChange={this.onChangeHandler} />
+                        <button type="submit" className="mat-icon" onClick={this.onSubmitHandler}>
+                            search
+                        </button>
+                    </div>
+                    {error && <small className="error">{error}</small>}
+                </form>
+            </div>
         )
     }
 }
