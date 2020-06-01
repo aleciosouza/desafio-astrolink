@@ -3016,14 +3016,16 @@ class GitHubService {
                 // const data = USER_REQUEST;
                 const repos = await this.getReposByUser(username);
                 resolve({
-                    id: data.id,
-                    login: data.login,
-                    avatar_url: data.avatar_url,
-                    followers: data.followers,
-                    following: data.following,
-                    bio: data.bio,
-                    email: data.email,
-                    repos
+                    user: {
+                        id: data.id,
+                        login: data.login,
+                        avatar_url: data.avatar_url,
+                        followers: data.followers,
+                        following: data.following,
+                        bio: data.bio,
+                        email: data.email,
+                    },
+                    repos: repos
                 });
             } catch (e) {
                 reject(e);
@@ -3059,14 +3061,14 @@ class GitHubService {
     validateUsername(username) {
         const reg = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i
         const valid = reg.test(username);
-        let error =  null;
+        let error = null;
 
-        if(!valid) {
-            if(!username){
+        if (!valid) {
+            if (!username) {
                 error = 'Informe um usuário';
-            } else if(username.length > 39) {
+            } else if (username.length > 39) {
                 error = 'O nome de usuário pode ter no máximo 39 caracteres.';
-            } else if(username[0] === '-') {
+            } else if (username[0] === '-') {
                 error = 'O nome de usuário não pode começar com hífem.';
             } else {
                 error = 'O nome de usuário não pode conter caracteres especiais.';

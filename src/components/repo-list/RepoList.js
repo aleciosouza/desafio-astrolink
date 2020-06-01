@@ -12,9 +12,9 @@ export default class RepoList extends React.Component {
         )
 
         return (
-            <div className="container">
+            <React.Fragment>
                 {cardRepoList}
-            </div>
+            </React.Fragment>
         )
     }
 }
