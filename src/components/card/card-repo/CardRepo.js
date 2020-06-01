@@ -18,7 +18,7 @@ class CardRepo extends React.Component {
             <div className="card card-repo elevation-z4">
                 <div className="card-header repo-header">
                     <h1>
-                        <a href={svn_url} target="_blank" rel="noopener"> 
+                        <a href={svn_url} target="_blank" rel="noopener noreferrer"> 
                             {name}
                             <i className="mat-icon">open_in_new</i>
                         </a>

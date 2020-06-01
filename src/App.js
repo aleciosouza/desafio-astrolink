@@ -30,8 +30,6 @@ class App extends React.Component {
     return (
       <div className="container">
         <header className="container navbar-search">
-          <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <UserSearchForm onUserChanged={this.onUserChanged} />
           {user && <CardUser user={user} />}
         </header>
