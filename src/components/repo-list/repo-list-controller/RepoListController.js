@@ -7,12 +7,13 @@ class RepoListController extends React.PureComponent {
     render() {
         const { repos, filter, changeOrdenationHandler } = this.props;
         return (
-            <div className="container repo-list">
+            <div className="container repo-list" data-testid="list-controller">
                 <div className="repo-list-header">
                     <h1>Repositórios</h1>
                     {repos && <FloatingButton icon={filter.icon} text={filter.text} onClickHandler={changeOrdenationHandler} />}
                 </div>
-                <RepoList repos={repos} />
+                {repos && <RepoList repos={repos} />}
+                {!repos && <p data-testid="no-repo">Nenhum Repositório</p>}
             </div>
         )
     }

@@ -17,21 +17,17 @@ class CardUser extends React.Component {
 
         return (
             <div className="container profile-container">
-                <img src={avatar_url} alt={imgAlt} className="header-img elevation-z4
-                " />
+                {avatar_url && <img src={avatar_url} alt={imgAlt} data-testid="user-img" className="header-img elevation-z4" />}
                 <div className="profile-header">
                     <div className="profile-user">
                         <h1>{login}</h1>
-                        {email && <p>{email}</p>}
+                        {email && <p aria-label="user-email">{email}</p>}
                     </div>
-                    <p className="profile-bio">
-                        {/* <b>Bio</b><br /> */}
-                        {bio}
-                    </p>
+                    {bio && <p className="profile-bio" aria-label="user-bio">{bio}</p>}
                 </div>
                 <ul className="profile-status">
-                    <li><b>Seguidores</b> {followers}</li>
-                    <li><b>Seguindo</b> {following}</li>
+                    <li><b>Seguidores</b> <span aria-label="user-followers">{followers ? followers : 0}</span></li>
+                    <li><b>Seguindo</b> <span aria-label="user-following">{following ? following : 0}</span></li>
                 </ul>
             </div>
         )

@@ -15,25 +15,25 @@ class CardRepo extends React.Component {
 
 
         return (
-            <div className="card card-repo elevation-z4">
+            <div className="card card-repo elevation-z4" data-testid="card-repo">
                 <div className="card-header repo-header">
                     <h1>
-                        <a href={svn_url} target="_blank" rel="noopener noreferrer"> 
+                        <a href={svn_url ? svn_url : '#'} target="_blank" rel="noopener noreferrer" data-testid="repo-url" >
                             {name}
                             <i className="mat-icon">open_in_new</i>
                         </a>
                     </h1>
-                    <p>{description}</p>
+                    {description && <p aria-label="repo-desc">{description}</p>}
                 </div>
                 <div className="card-body">
                     <ul className="repo-info">
                         <li className="repo-info-item">
                             <i className="mat-icon">star</i>
-                            <span>{stargazers_count}</span>
+                            <span aria-label="repo-stars">{stargazers_count ? stargazers_count : 0}</span>
                         </li>
                         <li className="repo-info-item">
                             <i className="mat-icon">code</i>
-                            <span>{language}</span>
+                            <span aria-label="repo-lang">{language ? language : 'Não informado'}</span>
                         </li>
                     </ul>
                 </div>

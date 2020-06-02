@@ -2,11 +2,8 @@ import React from 'react';
 import './App.css';
 import UserSearchForm from './components/user-search-form/UserSearchForm'
 import CardUser from './components/card/card-user/CardUser'
-import CardRepo from './components/card/card-repo/CardRepo'
-import FloatingButton from './components/utils/button/floating-button/FloatingButton'
-
 import RepoListController from './components/repo-list/repo-list-controller/RepoListController'
-import RepoList from './components/repo-list/RepoList'
+
 
 class App extends React.Component {
 
@@ -60,17 +57,7 @@ class App extends React.Component {
           {user && <CardUser user={user} />}
         </header>
         <main className="container elevation-z8">
-
           <RepoListController repos={repos} filter={filter} changeOrdenationHandler={this.changeOrdenation} />
-
-          {/* <div className="repo-list">
-            <div className="repo-list-header">
-              <h1>Repositórios</h1>
-              {repos && <FloatingButton icon={filter.icon} text={filter.text} onClickHandler={this.changeOrdenation} />}
-            </div>
-            <RepoList repos={repos} />
-          </div> */}
-
         </main>
       </div>
     )

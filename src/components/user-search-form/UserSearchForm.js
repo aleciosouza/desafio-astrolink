@@ -37,19 +37,19 @@ class UserSearchForm extends React.Component {
 
     render() {
         const { error } = this.state;
-
         return (
-            <div className="form-container">
+            <div className="form-container" data-testid="form-container">
                 <form onSubmit={this.onSubmitHandler}>
                     <div className="input-group">
                         <input name="userSearch" placeholder="Usuário" className="form-input"
-                            minLength="3" maxLength="39"
+                            minLength="3" maxLength="39" data-testid="user-search-input"
                             onChange={this.onChangeHandler} />
-                        <button type="submit" className="mat-icon" onClick={this.onSubmitHandler}>
+                        <button type="submit" className="mat-icon" data-testid="user-search-bt"
+                            onClick={this.onSubmitHandler}>
                             search
                         </button>
                     </div>
-                    {error && <small className="error">{error}</small>}
+                    {error && <small className="error" data-testid="search-error">{error}</small>}
                 </form>
             </div>
         )
