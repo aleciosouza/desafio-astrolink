@@ -1,31 +1,22 @@
 .profile-container {
-    display: flex;
-    flex-direction: column;
     margin-top: 1em;
+    align-items: center;
 }
 
 .header-img {
     max-width: 50%;
-    height: auto;
     border-radius: 50%;
-    border: 5px solid #f44336;
+    border: 10px solid #f44336;
     background-color: white;
-}
-
-.profile-header,
-.profile-status {
-    margin: 1em 0;
-    width: 90%;
 }
 
 .profile-user {
     text-align: center;
-    padding-bottom: .5em;
+    margin: .5em  0 1em 0;
 }
 
 .profile-user h1 {
     font-size: 2em;
-    margin: 0;
     color: #f44336;
 }
 
@@ -50,25 +41,28 @@
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
+    padding: 1em;
 }
 
+/* Tablet */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .profile-container {
         width: 50%;
     }
 
     .header-img {
-        max-width: 70%;
+        max-width: 50%;
     }
 }
 
-
+/* Lg. Tablet */
 @media screen and (min-device-width: 992px) and (max-device-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) {
     .profile-container {
         width: 40%;
     }
 }
 
+/* Lg. Screen */
 @media screen and (min-device-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
     .profile-container {
         width: 25%;

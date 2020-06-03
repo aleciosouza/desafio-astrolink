@@ -1,18 +1,10 @@
 import React from 'react';
-import '../card.css'
 import './card-repo.css'
 
 class CardRepo extends React.Component {
 
     render() {
-        const {
-            name,
-            description,
-            stargazers_count,
-            language,
-            svn_url,
-        } = this.props.repo;
-
+        const { name, description, stargazers_count, language, svn_url } = this.props.repo;
 
         return (
             <div className="card card-repo elevation-z4" data-testid="card-repo">

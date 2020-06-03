@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
 import UserSearchForm from './components/user-search-form/UserSearchForm'
-import CardUser from './components/card/card-user/CardUser'
+import HeaderUser from './components/header-user/HeaderUser'
 import RepoListController from './components/repo-list/repo-list-controller/RepoListController'
 
 
@@ -14,15 +13,17 @@ class App extends React.Component {
       repos: null,
       filter: {
         order: 'asc',
-        icon: 'arrow_upward',
+        icon: 'arrow_downward',
         text: 'Mais estrelas'
       }
     }
   }
 
+  /**
+   * Atualiza state para corresponder ao novo usuário buscado
+   */
   onUserChanged = (gitHubPromise) => {
-    gitHubPromise
-      .then(response => {
+    gitHubPromise.then(response => {
         this.setState({
           user: response.user,
           repos: [...response.repos]
@@ -33,16 +34,20 @@ class App extends React.Component {
       });
   }
 
+  /**
+   *  Reordena a lista de repositórios do usuário por numero de estrelas
+   */
   changeOrdenation = () => {
     const { filter, repos } = this.state;
 
     const newFilter = (filter.order === 'asc') ?
-      { order: 'desc', icon: 'arrow_downward', text: 'Menos estrelas' } :
-      { order: 'asc', icon: 'arrow_upward', text: 'Mais estrelas' };
+      { order: 'desc', icon: 'arrow_upward', text: 'Menos estrelas' } :
+      { order: 'asc', icon: 'arrow_downward', text: 'Mais estrelas' };
 
     const newRepos = (newFilter.order === 'asc') ?
       ([...repos].sort((a, b) => (a.stargazers_count < b.stargazers_count) ? 1 : -1)) :
       ([...repos].sort((a, b) => (a.stargazers_count > b.stargazers_count) ? 1 : -1));
+
     this.setState({ filter: newFilter, repos: newRepos });
   }
 
@@ -54,7 +59,7 @@ class App extends React.Component {
       <div className="container">
         <header className="container navbar-search">
           <UserSearchForm onUserChanged={this.onUserChanged} />
-          {user && <CardUser user={user} />}
+          {user && <HeaderUser user={user} />}
         </header>
         <main className="container elevation-z8">
           <RepoListController repos={repos} filter={filter} changeOrdenationHandler={this.changeOrdenation} />

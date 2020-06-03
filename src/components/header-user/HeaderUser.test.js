@@ -1,6 +1,6 @@
 import React from 'react'
-import CardUser from './CardUser'
-import { render, findByLabelText, queryByTestId } from '@testing-library/react'
+import HeaderUser from './HeaderUser'
+import { render, findByLabelText } from '@testing-library/react'
 
 const userCompleto = {
     id: 1060,
@@ -15,17 +15,17 @@ const userCompleto = {
 const userIncompleto = { id: 1060, login: "andrew" };
 
 
-describe('CardUser', () => {
-    it('Render Carduser corretamente com usuário completo', async () => {
-        let { container, queryByLabelText, queryByTestId } = render(<CardUser user={userCompleto} />)
+describe('HeaderUser', () => {
+    it('Render HeaderUser corretamente com usuário completo', async () => {
+        let { container, queryByLabelText, queryByTestId } = render(<HeaderUser user={userCompleto} />)
         expect((await findByLabelText(container, 'user-email')).innerHTML).toBe(userCompleto.email)
         expect(queryByTestId('user-img').src).toBe(userCompleto.avatar_url);
         expect(queryByLabelText('user-bio')).not.toBeNull();
         expect(queryByLabelText('user-followers').innerHTML).toBe(userCompleto.followers.toString());
         expect(queryByLabelText('user-following').innerHTML).toBe(userCompleto.following.toString());
     });
-    it('Render Carduser corretamente com usuário incompleto', async () => {
-        let { queryByLabelText, queryByTestId } = render(<CardUser user={userIncompleto} />)
+    it('Render HeaderUser corretamente com usuário incompleto', async () => {
+        let { queryByLabelText, queryByTestId } = render(<HeaderUser user={userIncompleto} />)
         expect(queryByLabelText('user-email')).toBeFalsy();
         expect(queryByTestId('user-img')).toBeFalsy();
         expect(queryByLabelText('user-bio')).toBeFalsy();

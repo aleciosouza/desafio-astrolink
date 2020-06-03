@@ -3,3 +3,12 @@
 	bottom:5%;
 	right:5%;
 }
+
+/* Lg. Tablet */
+@media screen and (min-device-width: 992px) and (max-device-width: 1199px) and (-webkit-min-device-pixel-ratio: 1) {
+    .btn-floating {
+		position: fixed;
+		bottom:3%;
+		right:3%;
+	}
+}

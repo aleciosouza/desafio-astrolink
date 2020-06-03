@@ -1,17 +1,10 @@
 import React from 'react';
-import './card-user.css'
+import './header-user.css'
 
-class CardUser extends React.Component {
+class HeaderUser extends React.Component {
 
     render() {
-        const {
-            login,
-            avatar_url,
-            followers,
-            following,
-            bio,
-            email
-        } = this.props.user;
+        const { login, avatar_url, followers, following, bio, email } = this.props.user;
 
         const imgAlt = `Foto de perfil do usuário ${login}`
 
@@ -35,4 +28,4 @@ class CardUser extends React.Component {
 
 }
 
-export default CardUser
+export default HeaderUser
