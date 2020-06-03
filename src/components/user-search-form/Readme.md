@@ -3,7 +3,7 @@ Renderiza formulário de busca de usuário na API do Github, dispara uma funçã
 
 ```js static
 import UserSearchForm from './components/user-search-form/UserSearchForm';
-//Função callBack de reordenação da lista
+//Função callBack com a resposta da API
 const onUserChangedCB = async function(userSearchPromise) {
     const { 
         user, // Usuário
