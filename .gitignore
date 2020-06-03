@@ -5,6 +5,8 @@
 build/
 .vscode/
 
+package-lock.json
+
 ### Node ###
 # Logs
 logs
