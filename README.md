@@ -11,7 +11,7 @@ Iniciar todos os testes
 ## App.js
 Componente principal do projeto, armazena os dados recebidos da API em seu state e reordena lista de repositórios.
 ```js static
-    import App from './App';
+import App from './App';
 ```
 ```jsx
 <App />
