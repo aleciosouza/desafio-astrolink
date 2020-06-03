@@ -1,4 +1,4 @@
-# RepoList
+# FloatingButton
 Renderiza um botão flutuante com ícone que dispara uma função de callBack ao clicar.
 
 Utiliza a fonte Material Icons para criar icones
