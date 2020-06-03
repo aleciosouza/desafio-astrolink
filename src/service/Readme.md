@@ -1,7 +1,7 @@
 # GitHubService
 Reponsável por tratar as repostas vindas do Repository e filtrar os dados desnecessários
 ```js static
-import GitHubService from './service/GitHubService';
+import GitHubService from './service/gitHubService';
 const gitHubService = new GitHubService(); 
 ```
 #### getUser() | async

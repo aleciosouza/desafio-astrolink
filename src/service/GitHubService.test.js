@@ -1,6 +1,6 @@
-import GitHubService from './GitHubService'
+import GitHubService from './githubService'
 
-jest.mock('./GitHubService');
+jest.mock('./githubService');
 
 beforeEach(() => {
     GitHubService.mockClear();

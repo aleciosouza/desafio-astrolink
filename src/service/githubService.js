@@ -1,4 +1,4 @@
-import GitHubRepository from '../repository/GithubRepository'
+import GitHubRepository from '../repository/githubRepository'
 
 class GitHubService {
 

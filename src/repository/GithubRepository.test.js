@@ -1,7 +1,7 @@
 import axios from 'axios';
-import GitHubRepository from './GithubRepository'
+import GitHubRepository from './githubRepository'
 
-jest.mock('./GithubRepository');
+jest.mock('./githubRepository');
 jest.mock('axios');
 
 beforeEach(() => {

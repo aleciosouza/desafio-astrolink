@@ -6,7 +6,7 @@ Reponsável por chamar a API do Github.
 
 ```js static
 import axios from 'axios'
-import GitHubRepository from './service/GitHubRepository';
+import GitHubRepository from './service/gitHubRepository';
 const gitHubRepository = new GitHubRepository(); 
 ```
 #### getUser() | async
